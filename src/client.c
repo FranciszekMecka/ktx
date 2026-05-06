@@ -2495,7 +2495,7 @@ void Check_SD(gedict_t *p)
 		case SD_GOLDEN_FRAG: {
 			const gedict_t *ed1 = get_ed_scores1();
 			const gedict_t *ed2 = get_ed_scores2();
-			if (isDuel() && ed1 && ed2)
+			if ((isDuel() || isFFA()) && ed1 && ed2)
 			{
 				if (GetCurrentFragDifference(ed1, ed2) > GetGoldenFragSnapshotDifference()) {
 					EndMatch(0);
